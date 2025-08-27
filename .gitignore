@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+dataset
+.env
+venv
 # C extensions
 *.so
 
