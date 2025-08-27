@@ -12,7 +12,7 @@ embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 load_dotenv()
 from langchain_chroma import Chroma
-model = ChatGroq(model = os.getenv("OPEN_AI_MODEL"))
+model = ChatGroq(model = os.getenv("LLAMA_MODEL"))
 EXCHANGE_RATE_API = os.getenv('EXCHANGE_RATE_API')
 parser = StrOutputParser()
 
