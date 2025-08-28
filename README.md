@@ -11,7 +11,7 @@ LLM-powered reasoning, and tool integrations.
 
 It can:  
 - Answer user queries in natural language  
-- Retrieve context from uploaded documents  
+- Retrieve context from documents.
 - Perform currency conversions using external APIs  
 - Provide definitions and explanations with AI reasoning  
 
@@ -21,7 +21,7 @@ Assistant delivers reliable, interactive, and real-time intelligence.
 ---
 
 ## ✨ Features
-- 📚 **Context-Aware Q&A** — Retrieval-Augmented Generation (RAG) from uploaded documents.  
+- 📚 **Context-Aware Q&A** — Retrieval-Augmented Generation (RAG) from documents.  
 - 🤖 **Groq LLaMA Integration** — Harnesses ultra-fast inference from Groq-hosted LLaMA models.  
 - 🔌 **External Tool Support** — Includes utilities like exchange rate lookup & domain-specific definitions.  
 - 🧠 **Agent-Based Reasoning** — Uses LangChain ReAct agents for dynamic tool orchestration.  
@@ -39,6 +39,19 @@ Assistant delivers reliable, interactive, and real-time intelligence.
 - 🔑 **Environment Variables** — API key management for Groq + external services  
 
 ---
+## 🔑 Key Design Choices  
+
+1. **Streamlit Frontend** → Chosen for simplicity and fast prototyping of an interactive UI.  
+2. **LangChain Framework** → Provides modularity for RAG pipelines, retrievers, and agent-based routing.  
+3. **ChromaDB as Vector Store** → Lightweight and easy-to-use local DB for storing & retrieving embeddings.  
+4. **Groq (Llama3.3) Model** → Low-latency inference with powerful open-source LLM.  
+5. **Separation of Concerns** →  
+   - `frontend.py` handles UI.  
+   - `tools.py` handles API integrations.  
+   - `replier.py` contains core LLM + RAG logic.  
+   - `log.py` manages logging.
+
+---
 
 ## 🏗️ Architecture
 ```plaintext
@@ -46,7 +59,7 @@ Assistant
 ├──app/
 │    └── frontend.py # Main entry point (Streamlit UI)
 ├── utils
-│   ├── tools.py # Custom tools (e.g., exchange rate lookup)
+│   ├── tools.py # Custom tools (e.g., curreny convertor)
 │   ├── log.py # Logging configuration
 │   └── replier.py # Core logic for RAG + agent responses
 │       
